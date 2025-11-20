@@ -34,7 +34,7 @@ export default function ServerAwake({
             Waking up the server...
           </h1>
           <p className="text-gray-600 mb-8">
-            This may take up to 15-30 seconds due to free tier hosting.
+            This may take up to 15-60 seconds due to free tier hosting.
           </p>
 
           <div className="loader"></div>
