@@ -52,7 +52,7 @@ export default function VerifyPage() {
       });
       const data = await res.json();
       if (!res.ok || !data.ok) throw new Error(data.error || 'Invalid code');
-      // Force a full navigation so middleware sees the new cookie
+      // Force a full navigation so proxy (previously middleware) sees the new cookie
       if (typeof window !== 'undefined') {
         window.location.replace(next);
       } else {
