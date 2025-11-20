@@ -1,0 +1,52 @@
+#easy-course-find-button {
+    align-self: flex-center;
+    border-radius: 4px;
+    padding: 0.15rem;
+    width: 100%;
+    margin-top: 10px;
+    color: #F2F7EB;
+    background-color: #D50032;
+
+    &:hover {
+        background-color: #ff003c;
+        cursor: pointer;
+    }
+}
+
+.easy-courses-results-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.courses-table{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+.course-subject-number-header{
+    text-align: left;
+    column-span: all;
+    background-color: #D50032;
+    color: #F2F7EB;
+    padding: 0 0.5rem;
+}
+
+.courses-entries-header-row{
+    text-align: left;
+    background-color: #D50032;
+    color: #F2F7EB;
+    th{
+        padding: 0 0.5rem;
+        border: 1px solid black;
+    }
+}
+
+.courses-entries-row{
+    text-align: center;
+    th{
+        border: 1px solid black;
+    }
+}
