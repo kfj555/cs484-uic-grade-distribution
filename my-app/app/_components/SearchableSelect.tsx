@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 
 interface SearchableSelectProps<T> {
   label?: string;
@@ -24,6 +24,18 @@ export default function SearchableSelect<T>({
       getOptionText(item).toLowerCase().includes(search.toLowerCase())
     );
   }, [search, items]);
+
+  const onChangeRef = useRef(onChange);
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
+
+  // Auto select the first item when search results change
+  useEffect(() => {
+    if (search && filteredItems.length > 0) {
+      onChangeRef.current(filteredItems[0]);
+    }
+  }, [search, filteredItems]);
 
   return (
     <div className="flex flex-col gap-2 relative w-80">

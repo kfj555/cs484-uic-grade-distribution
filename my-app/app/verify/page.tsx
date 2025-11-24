@@ -58,6 +58,9 @@ export default function VerifyPage() {
       } else {
         router.replace(next);
       }
+
+      // removed - router.replace(next); // on success, redirect to originally requested page
+    
     } catch (err: any) {
       setError(err?.message || 'Verification failed');
     } finally {
