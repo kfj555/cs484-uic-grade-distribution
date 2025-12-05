@@ -19,6 +19,11 @@ const Home = () => {
             See Exact Courses
           </button>
         </Link>
+        <Link href="./exact-all-years">
+          <button className="border w-80 h-15 rounded-md hover:bg-gray-200 hover:cursor-pointer">
+            See Exact Course - All Years
+          </button>
+        </Link>
         <Link href="./instructors">
           <button className="border w-80 h-15 rounded-md hover:bg-gray-200 hover:cursor-pointer">
             See Instructors
