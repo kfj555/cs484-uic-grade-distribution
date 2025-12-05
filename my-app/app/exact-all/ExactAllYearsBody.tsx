@@ -26,6 +26,7 @@ export default function ExactAllYearsBody() {
 
   const [loaded, setLoaded] = useState(false);
   const [loadingCourses, setLoadingCourses] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const BASE = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
 
@@ -145,16 +146,23 @@ export default function ExactAllYearsBody() {
 
         <div className="flex justify-evenly">
           <Button href="./">Back</Button>
-          <Button
-            href={`/graph-all?d=${encodeURIComponent(
-              subj
-            )}&dp=${encodeURIComponent(department)}&n=${encodeURIComponent(
-              courseNumber
-            )}`}
-          >
-            Get Graph
-          </Button>
+          <span onClick={() => setIsNavigating(true)}>
+            <Button
+              href={`/graph-all?d=${encodeURIComponent(
+                subj
+              )}&dp=${encodeURIComponent(department)}&n=${encodeURIComponent(
+                courseNumber
+              )}`}
+            >
+              Get Graph
+            </Button>
+          </span>
         </div>
+        {isNavigating && (
+          <div className="flex justify-center mt-8">
+            <div className="graph-loader"></div>
+          </div>
+        )}
       </Card>
     </div>
   );
